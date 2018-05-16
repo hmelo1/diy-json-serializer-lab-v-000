@@ -27,6 +27,10 @@ class ProductsController < ApplicationController
     render json: ProductSerializer.serialize(product)
   end
 
+  def show
+
+  end
+
   private
 
   def product_params
