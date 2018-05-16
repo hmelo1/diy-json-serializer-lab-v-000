@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
 
-  before_action :set_post, only: [:show, :edit, :update]
+  before_action :set_post, only: [:show]
 
   def index
     @products = Product.all
@@ -35,6 +35,9 @@ class ProductsController < ApplicationController
   end
 
   private
+  def set_post
+    @product = Product.find(params[:id])
+  end
 
   def product_params
     params.require(:product).permit(:name, :description, :inventory, :price)
